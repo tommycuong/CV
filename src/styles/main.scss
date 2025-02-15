@@ -1,0 +1,1369 @@
+// Reset styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// Custom variables
+$primary: #26ae61;
+$secondary: #20926f;
+$dark: #2c3e50;
+$light: #f8f9fa;
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Override Bootstrap container
+.container {
+  max-width: 100% !important;
+  padding: 0 50px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+// Custom styles
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+// Hero Header
+.hero-header {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/src/assets/vtc-academy-lap-trinh-1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-header h1 {
+  font-size: 4.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .hero-header h1 {
+    font-size: 3rem;
+  }
+}
+
+.hero-header h2 {
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .hero-header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+// Section styles
+section {
+  width: 100%;
+  padding: 100px 0;
+  position: relative;
+}
+
+section.bg-light {
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 2.2rem;
+  }
+}
+
+// Skills section
+.skills-section .card {
+  border: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.skills-section .card:hover {
+  transform: translateY(-5px);
+}
+
+.skills-section .card-body {
+  padding: 2rem;
+}
+
+.skills-section .progress {
+  height: 8px;
+  margin-bottom: 1.5rem;
+  background-color: #edf2f7;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skills-section .progress .progress-bar {
+  background-color: $primary;
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+// About section
+.about-section .profile-card {
+  border: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.about-section .profile-card .profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 5px solid $primary;
+}
+
+.about-section .profile-card .profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-section .profile-card .contact-info .info-item {
+  margin-bottom: 1rem;
+}
+
+.about-section .profile-card .contact-info .info-item i {
+  color: $primary;
+  width: 30px;
+  text-align: center;
+}
+
+.about-section .about-content {
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.about-section .about-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: $dark;
+}
+
+// Experience section styles
+.experience-section .section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.experience-section .section-title h2 {
+  color: var(--heading-color);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.experience-section .section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: $primary;
+}
+
+.experience-section .timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.experience-section .timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(100% - 100px);
+  background: linear-gradient(
+    to bottom,
+    rgba($primary, 0) 0%,
+    $primary 5%,
+    $primary 95%,
+    rgba($primary, 0) 100%
+  );
+}
+
+.experience-section .timeline .timeline-item {
+  margin-bottom: 3rem;
+  position: relative;
+  width: calc(50% - 30px);
+}
+
+.experience-section .timeline .timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.experience-section .timeline .timeline-item:nth-child(odd) .timeline-content {
+  margin-right: 30px;
+}
+
+.experience-section .timeline .timeline-item:nth-child(even) {
+  left: calc(50% + 30px);
+}
+
+.experience-section .timeline .timeline-item:nth-child(even) .timeline-content {
+  margin-left: 30px;
+}
+
+.experience-section .timeline .timeline-item .timeline-dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: $primary;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px rgba($primary, 0.2);
+  top: 10px;
+  z-index: 1;
+}
+
+.experience-section .timeline .timeline-item:nth-child(odd) .timeline-dot {
+  right: -38px;
+}
+
+.experience-section .timeline .timeline-item:nth-child(even) .timeline-dot {
+  left: -38px;
+}
+
+.experience-section .timeline .timeline-item .timeline-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.experience-section .timeline .timeline-item .timeline-content:hover {
+  transform: translateY(-5px);
+}
+
+.experience-section .timeline .timeline-item .timeline-content h3 {
+  color: $primary;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-section .timeline .timeline-item .timeline-content h4 {
+  color: $dark;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.experience-section .timeline .timeline-item .timeline-content .timeline-date {
+  color: $secondary;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.experience-section .timeline .timeline-item .timeline-content .timeline-description {
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience-section .timeline .timeline-item .timeline-content .timeline-description li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.experience-section .timeline .timeline-item .timeline-content .timeline-description li::before {
+  content: '•';
+  color: $primary;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+// Project Cards
+.project-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card .project-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-card .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-card .tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.project-card .tech-stack .tech-badge {
+  background-color: rgba($primary, 0.1);
+  color: $primary;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+}
+
+// Dark mode styles
+[data-theme='dark'] {
+  background-color: #121212;
+  color: #fff;
+}
+
+[data-theme='dark'] .hero-header .overlay {
+  background: rgba(0,0,0,0.8);
+}
+
+[data-theme='dark'] .about-section .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+[data-theme='dark'] .about-section .card .card-body {
+  color: #fff;
+}
+
+[data-theme='dark'] .about-section .card .card-body .lead {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .about-section .card .contact-info p {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .about-section .card .contact-info i {
+  color: $primary;
+}
+
+[data-theme='dark'] .skills-section {
+  background-color: #1a1a1a;
+}
+
+[data-theme='dark'] .skills-section .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+[data-theme='dark'] .skills-section .card .card-body h3 {
+  color: $primary;
+}
+
+[data-theme='dark'] .skills-section .card .card-body .d-flex span {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .skills-section .card .card-body .progress {
+  background-color: #333;
+}
+
+// Experience section dark mode
+[data-theme='dark'] .experience-section .timeline::before {
+  background-color: rgba($primary, 0.3);
+}
+
+[data-theme='dark'] .experience-section .timeline .timeline-item::before {
+  background-color: $primary;
+  border: 2px solid #1e1e1e;
+}
+
+[data-theme='dark'] .experience-section .timeline .timeline-item .timeline-content {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+[data-theme='dark'] .experience-section .timeline .timeline-item .timeline-content h3 {
+  color: $primary;
+}
+
+[data-theme='dark'] .experience-section .timeline .timeline-item .timeline-content h4 {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .experience-section .timeline .timeline-item .timeline-content .timeline-date {
+  color: #999;
+}
+
+[data-theme='dark'] .experience-section .timeline .timeline-item .timeline-content ul li {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .experience-section .timeline .timeline-item .timeline-content ul li::before {
+  color: $primary;
+}
+
+// Projects section dark mode
+[data-theme='dark'] .projects-section {
+  background-color: #121212;
+}
+
+[data-theme='dark'] .projects-section .project-card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+[data-theme='dark'] .projects-section .project-card .project-content {
+  background-color: #1e1e1e;
+}
+
+[data-theme='dark'] .projects-section .project-card .project-content h3 {
+  color: #fff;
+}
+
+[data-theme='dark'] .projects-section .project-card .project-content p {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .projects-section .project-card .project-content .project-year {
+  color: #999;
+}
+
+[data-theme='dark'] .projects-section .project-card .project-content .tech-badge {
+  background-color: rgba($primary, 0.2);
+  color: $primary;
+}
+
+[data-theme='dark'] .projects-section .project-card .project-content .tech-badge:hover {
+  background-color: $primary;
+  color: #fff;
+}
+
+[data-theme='dark'] .projects-section .project-card .project-footer {
+  border-color: #333;
+}
+
+[data-theme='dark'] .projects-section .project-card .project-footer .project-stats {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .projects-section .project-card .project-footer .project-stats i {
+  color: $primary;
+}
+
+[data-theme='dark'] .projects-section .project-card .project-overlay {
+  background: rgba(0,0,0,0.9);
+}
+
+[data-theme='dark'] .projects-section .project-card .project-overlay .btn-light {
+  background-color: #333;
+  border-color: #444;
+  color: #fff;
+}
+
+[data-theme='dark'] .projects-section .project-card .project-overlay .btn-light:hover {
+  background-color: #444;
+}
+
+[data-theme='dark'] .projects-section .section-title .text-muted {
+  color: #999 !important;
+}
+
+// Common dark mode styles for all sections
+[data-theme='dark'] .section-title h2 {
+  color: #fff;
+}
+
+[data-theme='dark'] .section-title .lead.text-muted {
+  color: #999 !important;
+}
+
+[data-theme='dark'] .card {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+[data-theme='dark'] .text-muted {
+  color: #999 !important;
+}
+
+[data-theme='dark'] .bg-light {
+  background-color: #1a1a1a !important;
+}
+
+[data-theme='dark'] .border-0 {
+  border-color: #333 !important;
+}
+
+// Fix title and text visibility
+[data-theme='dark'] .section-title h2.display-4 {
+  color: #fff !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+[data-theme='dark'] .section-title .lead {
+  color: #e0e0e0 !important;
+}
+
+// Fix text colors
+[data-theme='dark'] .text-primary {
+  color: $primary !important;
+}
+
+[data-theme='dark'] .text-secondary {
+  color: #90caf9 !important;
+}
+
+// Fix header text
+[data-theme='dark'] .hero-header h1.display-3 {
+  color: #fff !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+[data-theme='dark'] .hero-header h2.h2 {
+  color: #e0e0e0 !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+// Fix section backgrounds
+[data-theme='dark'] section:nth-child(odd) {
+  background-color: #121212;
+}
+
+[data-theme='dark'] section:nth-child(even) {
+  background-color: #1a1a1a;
+}
+
+// Fix card backgrounds and text
+[data-theme='dark'] .card {
+  background-color: #1e1e1e !important;
+}
+
+[data-theme='dark'] .card .card-body h1,
+[data-theme='dark'] .card .card-body h2,
+[data-theme='dark'] .card .card-body h3,
+[data-theme='dark'] .card .card-body h4,
+[data-theme='dark'] .card .card-body h5,
+[data-theme='dark'] .card .card-body h6 {
+  color: #fff;
+}
+
+[data-theme='dark'] .card .card-body p {
+  color: #e0e0e0;
+}
+
+// Fix button colors
+[data-theme='dark'] .btn-outline-primary {
+  color: $primary;
+  border-color: $primary;
+}
+
+[data-theme='dark'] .btn-outline-primary:hover {
+  background-color: $primary;
+  color: #fff;
+}
+
+// Fix progress bars
+[data-theme='dark'] .progress {
+  background-color: #333;
+}
+
+[data-theme='dark'] .progress .progress-bar {
+  background-color: $primary;
+}
+
+// Fix badges and tags
+[data-theme='dark'] .badge.bg-success {
+  background-color: darken($primary, 5%) !important;
+}
+
+// Fix borders
+[data-theme='dark'] .border,
+[data-theme='dark'] .border-top,
+[data-theme='dark'] .border-bottom,
+[data-theme='dark'] .border-start,
+[data-theme='dark'] .border-end {
+  border-color: #333 !important;
+}
+
+// Hover effects in dark mode
+[data-theme='dark'] .card:hover,
+[data-theme='dark'] .project-card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+[data-theme='dark'] .btn-primary:hover {
+  background-color: darken($primary, 10%);
+  border-color: darken($primary, 10%);
+}
+
+[data-theme='dark'] .btn-outline-light:hover {
+  background-color: #333;
+  border-color: #444;
+}
+
+[data-theme='dark'] .tech-badge:hover,
+[data-theme='dark'] .course-tag:hover {
+  background-color: $primary !important;
+  color: #fff !important;
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .hero-header {
+    height: 70vh;
+  }
+
+  .experience-section .timeline::before {
+    left: 30px;
+  }
+
+  .experience-section .timeline .timeline-item {
+    width: 100%;
+    padding-left: 80px;
+  }
+
+  .experience-section .timeline .timeline-item:nth-child(odd),
+  .experience-section .timeline .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .experience-section .timeline .timeline-item .timeline-content {
+    margin: 0;
+  }
+
+  .experience-section .timeline .timeline-item .timeline-dot {
+    left: 22px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+}
+
+// Add these styles
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.main-content {
+  width: 100%;
+}
+
+// Section spacing
+section {
+  &:nth-child(even) {
+    background-color: $light;
+  }
+
+  &:nth-child(odd) {
+    background-color: white;
+  }
+
+  .container {
+    @media (min-width: 1400px) {
+      max-width: 1920px !important;
+      padding: 0 100px;
+    }
+  }
+}
+
+// Card grid improvements
+.row {
+  --bs-gutter-x: 30px;
+  --bs-gutter-y: 30px;
+  
+  @media (min-width: 1400px) {
+    --bs-gutter-x: 50px;
+    --bs-gutter-y: 50px;
+  }
+}
+
+// Larger cards for bigger screens
+@media (min-width: 1400px) {
+  .card .card-body {
+    padding: 2.5rem;
+  }
+  
+  .project-card .project-image {
+    height: 300px;
+  }
+}
+
+// Project section styles
+.projects-section {
+  background-color: var(--bg-color);
+}
+
+.projects-section .project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.projects-section .project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.projects-section .project-card .project-overlay {
+  opacity: 1;
+}
+
+.projects-section .project-card .project-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.projects-section .project-card .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projects-section .project-card .project-image:hover .project-links {
+  transform: translateY(0);
+}
+
+.projects-section .project-card .project-content {
+  background: white;
+  border-radius: 0 0 12px 12px;
+}
+
+.projects-section .project-card .project-content h3 {
+  color: $dark;
+  font-weight: 600;
+}
+
+.projects-section .project-card .project-content .project-year {
+  font-size: 0.9rem;
+}
+
+.projects-section .project-card .project-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.projects-section .project-card .tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.projects-section .project-card .tech-stack .tech-badge {
+  padding: 5px 12px;
+  background-color: rgba($primary, 0.1);
+  color: $primary;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.projects-section .project-card .tech-stack .tech-badge:hover {
+  background-color: $primary;
+  color: white;
+}
+
+.projects-section .project-card .project-footer {
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.projects-section .project-card .project-footer .project-stats {
+  color: $dark;
+  font-size: 0.9rem;
+}
+
+.projects-section .project-card .project-footer .project-stats i {
+  color: $primary;
+}
+
+.projects-section .project-card .project-footer .badge {
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+// Dark mode adjustments
+[data-theme='dark'] .project-card {
+  background: #2d2d2d;
+}
+
+[data-theme='dark'] .project-card .project-content {
+  background: #2d2d2d;
+}
+
+[data-theme='dark'] .project-card .project-content h3 {
+  color: white;
+}
+
+[data-theme='dark'] .project-card .project-content p {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .project-card .project-footer {
+  border-color: rgba(255,255,255,0.1);
+}
+
+[data-theme='dark'] .project-card .project-footer .project-stats {
+  color: #e0e0e0;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .project-card .project-image {
+    height: 200px;
+  }
+
+  .project-card .project-overlay {
+    opacity: 1;
+    background: rgba(0,0,0,0.7);
+  }
+
+  .project-card .project-links {
+    transform: translateY(0) !important;
+  }
+}
+
+// Education section styles
+.education-section {
+  background-color: var(--bg-color);
+}
+
+.education-section .education-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.education-section .education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    rgba($primary, 0) 0%,
+    rgba($primary, 1) 10%,
+    rgba($primary, 1) 90%,
+    rgba($primary, 0) 100%
+  );
+  top: 0;
+}
+
+.education-section .education-timeline .timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  width: calc(50% - 30px);
+}
+
+.education-section .education-timeline .timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.education-section .education-timeline .timeline-item:nth-child(odd) .timeline-content {
+  margin-right: 30px;
+  &::after {
+    right: -15px;
+    border-left: 15px solid white;
+  }
+}
+
+.education-section .education-timeline .timeline-item:nth-child(even) {
+  left: calc(50% + 30px);
+}
+
+.education-section .education-timeline .timeline-item:nth-child(even) .timeline-content {
+  margin-left: 30px;
+  &::after {
+    left: -15px;
+    border-right: 15px solid white;
+  }
+}
+
+.education-section .education-timeline .timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: $primary;
+  border-radius: 50%;
+  top: 0;
+  z-index: 1;
+}
+
+.education-section .education-timeline .timeline-item:nth-child(odd)::before {
+  right: -40px;
+}
+
+.education-section .education-timeline .timeline-item:nth-child(even)::before {
+  left: -40px;
+}
+
+.education-section .education-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.education-section .education-card:hover {
+  transform: translateY(-5px);
+}
+
+.education-section .education-card .education-period {
+  margin-bottom: 1rem;
+}
+
+.education-section .education-card .education-period .year {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgba($primary, 0.1);
+  color: $primary;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.education-section .education-card .school-name {
+  color: $dark;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.education-section .education-card .school-name i {
+  color: $primary;
+}
+
+.education-section .education-card .degree {
+  color: $secondary;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.education-section .education-card .achievements .achievements-title {
+  font-size: 1rem;
+  color: $dark;
+  margin-bottom: 0.5rem;
+}
+
+.education-section .education-card .achievements .achievements-title i {
+  color: $primary;
+}
+
+.education-section .education-card .achievements .achievements-list {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.education-section .education-card .achievements .achievements-list li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: $dark;
+}
+
+.education-section .education-card .achievements .achievements-list li::before {
+  content: '•';
+  color: $primary;
+  position: absolute;
+  left: -1rem;
+}
+
+.education-section .education-card .courses .courses-title {
+  font-size: 1rem;
+  color: $dark;
+  margin-bottom: 0.5rem;
+}
+
+.education-section .education-card .courses .courses-title i {
+  color: $primary;
+}
+
+.education-section .education-card .courses .course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.education-section .education-card .courses .course-tag {
+  padding: 0.25rem 0.75rem;
+  background-color: rgba($primary, 0.1);
+  color: $primary;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.education-section .education-card .courses .course-tag:hover {
+  background-color: $primary;
+  color: white;
+}
+
+// Dark mode adjustments
+[data-theme='dark'] .education-card {
+  background: #2d2d2d;
+}
+
+[data-theme='dark'] .education-card .school-name {
+  color: white;
+}
+
+[data-theme='dark'] .education-card .degree {
+  color: $primary;
+}
+
+[data-theme='dark'] .education-card .achievements .achievements-title {
+  color: white;
+}
+
+[data-theme='dark'] .education-card .achievements .achievements-list li {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .education-card .courses .courses-title {
+  color: white;
+}
+
+// Education section responsive styles
+@media (max-width: 768px) {
+  .education-section {
+    .education-timeline {
+      &::before {
+        left: 0;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 2rem;
+        margin-bottom: 2rem;
+
+        &:nth-child(odd),
+        &:nth-child(even) {
+          left: 0;
+
+          .timeline-content {
+            margin: 0;
+          }
+
+          .timeline-dot {
+            left: -8px;
+          }
+        }
+
+        .education-card {
+          padding: 1.5rem;
+
+          .education-period {
+            .year {
+              font-size: 0.85rem;
+            }
+          }
+
+          .school-name {
+            font-size: 1.2rem;
+          }
+
+          .degree {
+            font-size: 1rem;
+          }
+
+          .achievements {
+            .achievements-title {
+              font-size: 0.95rem;
+            }
+
+            .achievements-list {
+              li {
+                font-size: 0.9rem;
+                margin-bottom: 0.4rem;
+              }
+            }
+          }
+
+          .courses {
+            .courses-title {
+              font-size: 0.95rem;
+            }
+
+            .course-tags {
+              gap: 0.4rem;
+
+              .course-tag {
+                font-size: 0.8rem;
+                padding: 0.2rem 0.6rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .section-title {
+      margin-bottom: 3rem;
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Tablet responsive
+@media (min-width: 769px) and (max-width: 1024px) {
+  .education-section {
+    .education-timeline {
+      max-width: 90%;
+
+      .timeline-item {
+        .education-card {
+          padding: 1.75rem;
+
+          .school-name {
+            font-size: 1.3rem;
+          }
+
+          .degree {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small screens
+@media (max-width: 480px) {
+  .education-section {
+    padding: 60px 0;
+
+    .education-timeline {
+      padding: 1rem 0;
+
+      .timeline-item {
+        padding-left: 1.5rem;
+
+        .education-card {
+          padding: 1.25rem;
+
+          .education-period {
+            margin-bottom: 0.75rem;
+          }
+
+          .school-name {
+            font-size: 1.1rem;
+          }
+
+          .degree {
+            font-size: 0.95rem;
+          }
+
+          .achievements,
+          .courses {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Sidebar styles
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  height: 100vh;
+  width: 280px;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar .sidebar-content {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar .sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  color: $dark;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.sidebar .sidebar-item i {
+  width: 24px;
+  color: $primary;
+}
+
+.sidebar .sidebar-item:hover {
+  background-color: rgba($primary, 0.1);
+  transform: translateX(5px);
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: $primary;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-toggle:hover {
+  background-color: darken($primary, 10%);
+  transform: scale(1.1);
+}
+
+.sidebar-toggle.open {
+  left: 300px;
+}
+
+.sidebar-toggle i {
+  font-size: 1.2rem;
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+// Dark mode styles for sidebar
+[data-theme='dark'] .sidebar {
+  background-color: #1e1e1e;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+}
+
+[data-theme='dark'] .sidebar .sidebar-item {
+  color: #fff;
+}
+
+[data-theme='dark'] .sidebar .sidebar-item:hover {
+  background-color: rgba($primary, 0.2);
+}
+
+[data-theme='dark'] .sidebar-toggle {
+  background-color: $primary;
+}
+
+[data-theme='dark'] .sidebar-toggle:hover {
+  background-color: darken($primary, 10%);
+}
+
+// Responsive styles for sidebar
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  .sidebar .sidebar-content {
+    padding-top: 4rem;
+  }
+
+  .sidebar-toggle.open {
+    left: 20px;
+  }
+}
