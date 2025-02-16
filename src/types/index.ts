@@ -24,7 +24,7 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  level: number; // 0-100
+  level: number; 
   category: string;
 }
 

@@ -51,7 +51,7 @@ const projects: Project[] = [
 
 const educationData: EducationType[] = [
   {
-    school: "Trường đào tạo lập trình viên AptechAptech",
+    school: "Trường đào tạo lập trình viên Aptech",
     degree: "Kỹ sư",
     field: "Công nghệ thông tin",
     graduationDate: "2019",
